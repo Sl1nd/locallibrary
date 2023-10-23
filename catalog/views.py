@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
-from catalog.models import Book
+from catalog.models import Book, BookInstance, Author
 
 # Create your views here.
 def index(request):
 
-    num_books: Book = Book.objects.all().coun()
+    num_books: Book = Book.objects.all().count()
     num_instances = BookInstance.objects.all().count()
 
     # Available books (status = 'a')
